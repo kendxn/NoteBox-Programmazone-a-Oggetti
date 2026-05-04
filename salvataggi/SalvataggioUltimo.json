@@ -1,0 +1,86 @@
+[
+    {
+        "etichetta": "Generico",
+        "nomeAssegnatore": "io",
+        "testo": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"\n\n",
+        "tipo": "base",
+        "titolo": "Simple text note"
+    },
+    {
+        "etichetta": "Generico",
+        "nomeAssegnatore": "io",
+        "percorsoMedia": "media/8900beb5fe2b638fcb50f8131bbccfa1.jpg",
+        "testo": "Image description here...",
+        "tipo": "multimediale",
+        "titolo": "Media type note"
+    },
+    {
+        "completata": false,
+        "etichetta": "Univesity",
+        "nomeAssegnatore": "io",
+        "testo": "- \"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem \n- quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam \n- eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit\n- laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"\n\n",
+        "tipo": "task",
+        "titolo": "To do list "
+    },
+    {
+        "completata": false,
+        "etichetta": "Generico",
+        "nomeAssegnatore": "io",
+        "testo": "Curabitur maximus justo sit amet dui vulputate fringilla. In scelerisque urna eu commodo sagittis. Praesent tempus magna ut urna rutrum auctor. Aliquam sit amet metus at justo varius fringilla dignissim id orci. Praesent viverra nunc et gravida ornare. Integer consectetur libero eget libero dignissim consequat. Integer pulvinar leo est, eget dapibus velit tincidunt et. Vivamus accumsan ut diam eget porttitor. Quisque congue ultricies tortor, a imperdiet magna sollicitudin vitae. Maecenas finibus risus ligula, nec laoreet neque mollis ut. Aenean efficitur metus eu lectus ultricies venenatis.\n\n",
+        "tipo": "task",
+        "titolo": "Hurry up tomorrow"
+    },
+    {
+        "etichetta": "House Chores",
+        "nomeAssegnatore": "io",
+        "testo": "Sed laoreet lacus sit amet enim ullamcorper, eget bibendum nisi faucibus. Maecenas ac ex vel ante euismod mattis. Quisque molestie felis eleifend velit consequat gravida. Mauris eu purus tortor. Curabitur nec luctus ex. Morbi imperdiet massa a tellus dictum pulvinar. Pellentesque eros lorem, accumsan quis sagittis non, condimentum at augue. Mauris vitae nibh non nulla sollicitudin elementum. Nullam vitae velit non nulla tincidunt posuere non at ipsum. Suspendisse sit amet odio eget quam lobortis faucibus sit amet pretium sapien. Donec eros ex, pulvinar non odio a, scelerisque dapibus nibh. Vivamus finibus vel leo id venenatis.\n\n",
+        "tipo": "base",
+        "titolo": "ante euismod mattis"
+    },
+    {
+        "etichetta": "Generico",
+        "nomeAssegnatore": "io",
+        "percorsoMedia": "media/60b9d6a3f07101bd2e14b661eb087705.jpg",
+        "testo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse viverra bibendum dui, in lobortis erat tristique quis. Ut aliquet neque sed dui condimentum vulputate.\nVestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam justo neque, mattis ut purus et, euismod egestas nisi. Ut lacus dui, dapibus non luctus id, euismod semper nisl. Nam elit libero, faucibus elementum dapibus in, dapibus vel quam. Maecenas sollicitudin eu ex ac interdum. Nulla imperdiet a nunc ac aliquet. \n\nDonec diam diam, laoreet ac pharetra vel, elementum id tellus. Donec eget nunc ut justo iaculis vestibulum. Ut posuere magna vitae eros varius, sit amet porta urna mattis. Sed id feugiat sem. Sed dignissim purus sit amet ante eleifend egestas. Donec feugiat consequat neque, id venenatis mi maximus vitae. Nunc et lacus vitae lacus iaculis scelerisque non vitae nisi.\n\n",
+        "tipo": "multimediale",
+        "titolo": "Thing to buy"
+    },
+    {
+        "etichetta": "House Chores",
+        "nomeAssegnatore": "io",
+        "percorsoMedia": "media/c3aa7e3386b02bb86acf131fcc2cbf68.jpg",
+        "testo": "Phasellus arcu orci, malesuada sed tincidunt eget, rhoncus quis augue. Maecenas ultricies fermentum \n\nurna eu imperdiet. Donec ac leo rhoncus, lobortis nunc at, elementum lacus. Vestibulum tristique, velit vitae luctus eleifend, neque sem condimentum tellus, ac pulvinar magna tellus a nulla. Morbi \nultrices turpis non est interdum ullamcorper sed in tortor. In sed augue est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc mi urna, dignissim \nsit amet lorem at, tristique maximus sapien. Curabitur semper in augue quis ullamcorper. Donec nulla sapien, pulvinar non tortor ac, sodales porttitor neque. Vestibulum at eleifend est, sit amet dapibus tortor. ",
+        "tipo": "multimediale",
+        "titolo": "urna eu imperdiet. Donec ac leo rhoncus, lobortis"
+    },
+    {
+        "etichetta": "Shopping List",
+        "nomeAssegnatore": "io",
+        "percorsoMedia": "media/db919fadf3f10b7cce0a88985d05fadc.jpg",
+        "testo": "- Nullam sem purus, euismod quis lectus faucibus, cursus rhoncus nisi. Pellentesque tristique mauris risus, non posuere lectus eleifend vitae. Donec at ornare enim. Nam sed dui in tellus malesuada \n\n- condimentum ac volutpat orci. Aliquam neque neque, egestas ut porttitor ac, eleifend \n\n- ut libero. Donec viverra ornare ligula, ut ullamcorper lacus auctor volutpat. Proin tincidunt sem in venenatis accumsan. Vestibulum hendrerit tincidunt tempus. Maecenas bibendum placerat odio, eu faucibus diam aliquet sed. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce molestie imperdiet convallis. ",
+        "tipo": "multimediale",
+        "titolo": "Lista dellla spesa"
+    },
+    {
+        "completata": false,
+        "dataAssegnazione": "2026-05-02",
+        "etichetta": "Shopping List",
+        "nomeAssegnatore": "io",
+        "percorsoMedia": "media/7177985535ec83dc423241345facaaee.jpg",
+        "scadenza": "2026-10-15T10:32:40Z",
+        "testo": "- Sed molestie fermentum quam vel sollicitudin. Vestibulum quis elit lacus. Donec pulvinar magna tincidunt magna vehicula\n-  eu sollicitudin nibh mollis. In hac habitasse platea dictumst. Suspendisse vitae congue libero, a tempor sem. Nunc sollicitudin vitae felis et pulvinar. Donec quis aliquet mauris. Proin - nisi ante, sagittis vitae nunc ut, scelerisque pharetra felis. Etiam consectetur vulputate mauris, vitae eleifend elit volutpat lobortis. Praesent vel eleifend nulla. Mauris mi ligula, cursus at convallis ac, consectetur a purus. Cras interdum ex ac lacus vehicula, ac suscipit dolor viverra. Curabitur vitae commodo neque. Ut eu metus et mauris tincidunt tempus vitae in enim. Integer semper eros a mauris sodales porta. ",
+        "tipo": "avanzato",
+        "titolo": "Another list of product to buy at the super market"
+    },
+    {
+        "completata": false,
+        "dataAssegnazione": "2026-05-02",
+        "etichetta": "Univesity",
+        "nomeAssegnatore": "io",
+        "percorsoMedia": "media/6bd1f8696be3c28a24db4f96c7342a65.jpg",
+        "scadenza": "2028-12-14T10:35:00Z",
+        "testo": "Sed molestie fermentum quam vel sollicitudin. Vestibulum quis elit lacus. Donec pulvinar magna tincidunt magna vehicula, eu sollicitudin nibh mollis. In hac habitasse platea dictumst. Suspendisse vitae congue libero, a tempor sem. Nunc sollicitudin vitae felis et pulvinar. Donec quis aliquet mauris. ",
+        "tipo": "avanzato",
+        "titolo": "Note per l'uiversità"
+    }
+]

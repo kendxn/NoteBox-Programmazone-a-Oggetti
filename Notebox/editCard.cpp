@@ -94,14 +94,35 @@ void editCard::on_buttonSalva_clicked() {
 
 
 void editCard::on_buttonImmagine_clicked() {
+    // finestra selezione
     QString filePath = QFileDialog::getOpenFileName(
-        this, tr("Seleziona Immagine"), QDir::homePath(),
-        tr("Immagini (*.png *.jpg *.jpeg *.bmp)")
+        this,
+        tr("Seleziona Immagine"),
+        QDir::homePath(),
+        tr("Immagini (*.png *.jpg *.jpeg *.bmp);;Tutti i file (*.*)")
         );
 
     if (!filePath.isEmpty()) {
-        ui->labelImmagine->setText(filePath);
+        QFileInfo info(filePath);
+        QString fileName = info.fileName();
+
+        QDir dir;
+        if (!dir.exists("media")) {
+            dir.mkdir("media");
+        }
+
+        QString destinazione = "media/" + fileName;
+
+
+        if (!QFile::exists(destinazione)) {
+            QFile::copy(filePath, destinazione);
+        }
+
+        ui->labelImmagine->setText(destinazione);
+        ui->labelImmagine->setWordWrap(true);
     }
+
+
 }
 
 void editCard::on_buttonSetScadenza_clicked()
