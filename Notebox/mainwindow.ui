@@ -58,7 +58,7 @@ QPushButton:hover {
        <string notr="true"/>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page">
        <layout class="QVBoxLayout" name="verticalLayout_9">
@@ -349,7 +349,7 @@ border: none;
                    <x>0</x>
                    <y>0</y>
                    <width>300</width>
-                   <height>441</height>
+                   <height>443</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -410,7 +410,7 @@ border:none;
                    <x>0</x>
                    <y>0</y>
                    <width>1154</width>
-                   <height>793</height>
+                   <height>795</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_5">

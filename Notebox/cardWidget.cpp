@@ -10,6 +10,7 @@ cardWidget::cardWidget(QWidget *parent)
     , ui(new Ui::cardWidget)
 {
     ui->setupUi(this);
+    this->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
     ui->buttonCambiaStato->hide();
 }
 

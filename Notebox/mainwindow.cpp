@@ -155,6 +155,12 @@ void MainWindow::riposizionaCards() {
             break;
         }
 
+        if (mostra && !etichettaCorrente.isEmpty()) {
+            if (n->etichetta != etichettaCorrente) {
+                mostra = false;
+            }
+        }
+
         if (!mostra) continue;
 
         // connessione a card
@@ -237,7 +243,7 @@ void MainWindow::addCard(nota *data) {
 
     if (!data) return; // controllo di sicurezza
 
-    listaNote.append(data);
+    listaNote.prepend(data);
     riposizionaCards();
 }
 
@@ -511,17 +517,12 @@ void MainWindow::creaWidgetEtichetta(const QString &nome) {
 
 void MainWindow::filtraPerEtichetta(const QString &tag) {
 
-    for (int i = 0; i < ui->gridLayout->count(); ++i) {
-        QWidget *w = ui->gridLayout->itemAt(i)->widget();
-        cardWidget *card = qobject_cast<cardWidget*>(w);
-        if (card) {
-            bool matches = (card->getCurrentData()->etichetta == tag);
-            card->setVisible(matches);
-        }
-    }
+    this->etichettaCorrente = tag;
+    riposizionaCards();
 }
 
 // --- Saltavataggio e Importazione di dati in formato Json ---
+
 
 void MainWindow::salvaDati() {
     QString path = QFileDialog::getSaveFileName(this, "Salva Note", "", "JSON Files (*.json)");
@@ -585,6 +586,7 @@ void MainWindow::on_pushButton_5_clicked()
 // filtri per mostrare le gerachie delle note
 void MainWindow::on_buttonNote_clicked() {
     filtroCorrente = TUTTE;
+    etichettaCorrente = ""; // Reset dell'etichetta
     riposizionaCards();
 }
 
@@ -688,8 +690,11 @@ void MainWindow::on_actionCarica_triggered() {
             n->testo = obj["testo"].toString();
             n->nomeAssegnatore = obj["nomeAssegnatore"].toString();
 
-            n->dataAssegnazione = QDate::fromString(obj["dataAssegnazione"].toString(), Qt::ISODate);
-            if(obj.contains("id")) n->id = obj["id"].toVariant().toLongLong();
+            if (obj.contains("dataAssegnazione")) {
+                n->dataAssegnazione = QDate::fromString(obj["dataAssegnazione"].toString(), Qt::ISODate);
+            } else {
+                n->dataAssegnazione = QDate::currentDate();
+            }            if(obj.contains("id")) n->id = obj["id"].toVariant().toLongLong();
 
             QString et = obj["etichetta"].toString();
             if (et.isEmpty()) et = "Generico";

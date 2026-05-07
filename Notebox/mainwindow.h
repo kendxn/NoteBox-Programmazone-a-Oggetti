@@ -63,6 +63,8 @@ private:
     Ui::MainWindow *ui;
     enum VistaAttuale { TUTTE, SOLO_PROMEMORIA, SOLO_TASK, SOLO_MULTIMEDIALE };
     VistaAttuale filtroCorrente = TUTTE;
+    QString etichettaCorrente = "";
+
     QVector<nota*> listaNote;
     QVector<nota*> listaWidget;
     QStringList elencoEtichette;

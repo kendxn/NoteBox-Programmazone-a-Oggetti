@@ -22,42 +22,35 @@ editCard::editCard(QWidget *parent) :
 editCard::~editCard() {
     delete ui;
 }
-
 void editCard::caricaDati(nota *data) {
     if (!data) return;
     this->notaInModifica = data;
 
-    // dati comuni
     ui->lineTitolo->setText(data->titolo);
     ui->boxTesto->setPlainText(data->testo);
     ui->lineAssegnatore->setText(data->nomeAssegnatore);
 
-    // reset visibilità
+    int index = ui->comboBox->findText(data->etichetta);
+    if (index != -1) {
+        ui->comboBox->setCurrentIndex(index);
+    }
+
     ui->frameScadenzaEdit->hide();
     ui->frameImmagine->hide();
     ui->frameScadenzaButton->hide();
 
-    // promemoria
+
     if (promemoria* p = dynamic_cast<promemoria*>(data)) {
         ui->frameScadenzaEdit->show();
-        ui->frameScadenzaButton->hide();
         ui->dateEdit->setDateTime(p->getScadenza());
     }
 
-    // immagine
+
     if (notaMultimediale* nm = dynamic_cast<notaMultimediale*>(data)) {
         ui->frameImmagine->show();
-        ui->frameScadenzaButton->hide();
-        ui->frameScadenzaEdit->hide();
         ui->labelImmagine->setText(nm->percorsoMedia);
     }
 
-    // task
-    if (notaTask* t = dynamic_cast<notaTask*>(data)) {
-        ui->frameImmagine->hide();
-        ui->frameScadenzaButton->hide();
-        ui->frameScadenzaEdit->hide();
-    }
 }
 
 // --- gestione dei bottoni ---
@@ -94,13 +87,32 @@ void editCard::on_buttonSalva_clicked() {
 
 
 void editCard::on_buttonImmagine_clicked() {
+    // finestra selezione
     QString filePath = QFileDialog::getOpenFileName(
-        this, tr("Seleziona Immagine"), QDir::homePath(),
-        tr("Immagini (*.png *.jpg *.jpeg *.bmp)")
+        this,
+        tr("Seleziona Immagine"),
+        QDir::homePath(),
+        tr("Immagini (*.png *.jpg *.jpeg *.bmp);;Tutti i file (*.*)")
         );
 
     if (!filePath.isEmpty()) {
-        ui->labelImmagine->setText(filePath);
+        QFileInfo info(filePath);
+        QString fileName = info.fileName();
+
+        QDir dir;
+        if (!dir.exists("media")) {
+            dir.mkdir("media");
+        }
+
+        QString destinazione = "media/" + fileName;
+
+
+        if (!QFile::exists(destinazione)) {
+            QFile::copy(filePath, destinazione);
+        }
+
+        ui->labelImmagine->setText(destinazione);
+        ui->labelImmagine->setWordWrap(true);
     }
 }
 

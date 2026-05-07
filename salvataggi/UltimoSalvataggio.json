@@ -1,6 +1,24 @@
 [
     {
-        "dataAssegnazione": "2026.05.02",
+        "etichetta": "Shopping List",
+        "nomeAssegnatore": "io",
+        "percorsoMedia": "media/montagneConPicco.jpg",
+        "testo": "Vestibulum vehicula ut odio ut ornare. Donec dapibus, enim ac cursus volutpat, lorem purus gravida ligula, vel posuere turpis erat ut elit. Mauris eu molestie dui. In interdum orci eget nibh tristique laoreet. Quisque in massa turpis. Nulla magna arcu, tincidunt nec dolor ut, mattis accumsan lacus. Quisque elit massa, blandit eget condimentum vel, semper a magna.\n\nVestibulum vehicula ut odio ut ornare. Donec dapibus, enim ac cursus volutpat, lorem purus gravida ligula, vel posuere turpis erat ut elit. Mauris eu molestie dui. In interdum orci eget nibh tristique laoreet. Quisque in massa turpis. Nulla magna arcu, tincidunt nec dolor ut, mattis accumsan lacus. Quisque elit massa, blandit eget condimentum vel, semper a magna.\n\nVestibulum vehicula ut odio ut ornare. Donec dapibus, enim ac cursus volutpat, lorem purus gravida ligula, vel posuere turpis erat ut elit. Mauris eu molestie dui. In interdum orci eget nibh tristique laoreet. Quisque in massa turpis. Nulla magna arcu, tincidunt nec dolor ut, mattis accumsan lacus. Quisque elit massa, blandit eget condimentum vel, semper a magna.\n\n",
+        "tipo": "multimediale",
+        "titolo": "Future list"
+    },
+    {
+        "completata": false,
+        "dataAssegnazione": "2026-05-07",
+        "etichetta": "House Chores",
+        "nomeAssegnatore": "Danny",
+        "percorsoMedia": "media/826708f27855f3fe22e45f463f0aabb0.jpg",
+        "scadenza": "2026-11-19T00:00:00Z",
+        "testo": "Praesent cursus massa vitae convallis finibus. Morbi sit amet rutrum orci. Aliquam neque nunc, sodales ac commodo ut, tempus ac libero. Proin eleifend neque eu lorem dignissim tincidunt. Aliquam faucibus urna lorem, ac consequat justo aliquam posuere. Vestibulum id nisi sed dolor maximus mattis nec ut tortor. Quisque in eros at quam aliquet pretium. Nam volutpat justo in risus venenatis molestie. Vestibulum ultrices, massa sit amet interdum commodo, purus mi consequat risus, at hendrerit massa neque a tortor. Nullam sit amet molestie sem, non rutrum tellus. Aenean pellentesque ipsum at nisl feugiat bibendum. Morbi finibus velit nisi, nec aliquam ipsum aliquam lobortis. Praesent porta dictum nulla, in egestas lacus. Sed sed quam nec ex luctus aliquet at id nisl. In quis urna tempor, egestas odio ac, aliquam leo.\n\n",
+        "tipo": "avanzato",
+        "titolo": "A test note"
+    },
+    {
         "etichetta": "Generico",
         "nomeAssegnatore": "io",
         "testo": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"\n\n",
@@ -8,17 +26,15 @@
         "titolo": "Simple text note"
     },
     {
-        "dataAssegnazione": "2026.05.02",
         "etichetta": "Generico",
         "nomeAssegnatore": "io",
-        "percorsoMedia": "media/Dorian Havilliard _ princeling _ Throne of Glass aesthetic.jpg",
+        "percorsoMedia": "media/9a3093007828ae43dcb5b388457cb530.jpg",
         "testo": "Image description here...",
         "tipo": "multimediale",
         "titolo": "Media type note"
     },
     {
         "completata": false,
-        "dataAssegnazione": "2026.05.02",
         "etichetta": "Univesity",
         "nomeAssegnatore": "io",
         "testo": "- \"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem \n- quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam \n- eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit\n- laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"\n\n",
@@ -26,7 +42,6 @@
         "titolo": "To do list "
     },
     {
-        "dataAssegnazione": "2026.05.02",
         "etichetta": "Univesity",
         "nomeAssegnatore": "io",
         "testo": "Curabitur maximus justo sit amet dui vulputate fringilla. In scelerisque urna eu commodo sagittis. Praesent tempus magna ut urna rutrum auctor. Aliquam sit amet metus at justo varius fringilla dignissim id orci. Praesent viverra nunc et gravida ornare. Integer consectetur libero eget libero dignissim consequat. Integer pulvinar leo est, eget dapibus velit tincidunt et. Vivamus accumsan ut diam eget porttitor. Quisque congue ultricies tortor, a imperdiet magna sollicitudin vitae. Maecenas finibus risus ligula, nec laoreet neque mollis ut. Aenean efficitur metus eu lectus ultricies venenatis.\n\n",
@@ -35,18 +50,17 @@
     },
     {
         "completata": false,
-        "dataAssegnazione": "2026.05.02",
+        "dataAssegnazione": "2026-05-02",
         "etichetta": "Univesity",
         "nomeAssegnatore": "io",
         "percorsoMedia": "media/Screenshot_20260430_151313.png",
-        "scadenza": "2027.01.14",
+        "scadenza": "2027-01-14T00:00:00",
         "testo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse viverra bibendum dui, in lobortis erat tristique quis. Ut aliquet neque sed dui condimentum vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam justo neque, mattis ut purus et, euismod egestas nisi. Ut lacus dui, dapibus non luctus id, euismod semper nisl. Nam elit libero, faucibus elementum dapibus in, dapibus vel quam. Maecenas sollicitudin eu ex ac interdum. Nulla imperdiet a nunc ac aliquet. Donec diam diam, laoreet ac pharetra vel, elementum id tellus. Donec eget nunc ut justo iaculis vestibulum. Ut posuere magna vitae eros varius, sit amet porta urna mattis. Sed id feugiat sem. Sed dignissim purus sit amet ante eleifend egestas. Donec feugiat consequat neque, id venenatis mi maximus vitae. Nunc et lacus vitae lacus iaculis scelerisque non vitae nisi.\n\n",
         "tipo": "avanzato",
         "titolo": "For my project"
     },
     {
         "completata": false,
-        "dataAssegnazione": "2026.05.02",
         "etichetta": "Generico",
         "nomeAssegnatore": "io",
         "testo": "Curabitur maximus justo sit amet dui vulputate fringilla. In scelerisque urna eu commodo sagittis. Praesent tempus magna ut urna rutrum auctor. Aliquam sit amet metus at justo varius fringilla dignissim id orci. Praesent viverra nunc et gravida ornare. Integer consectetur libero eget libero dignissim consequat. Integer pulvinar leo est, eget dapibus velit tincidunt et. Vivamus accumsan ut diam eget porttitor. Quisque congue ultricies tortor, a imperdiet magna sollicitudin vitae. Maecenas finibus risus ligula, nec laoreet neque mollis ut. Aenean efficitur metus eu lectus ultricies venenatis.\n\n",
@@ -55,17 +69,16 @@
     },
     {
         "completata": false,
-        "dataAssegnazione": "2026.05.02",
+        "dataAssegnazione": "2026-05-02",
         "etichetta": "House Chores",
         "nomeAssegnatore": "io",
         "percorsoMedia": "media/Screenshot_20260428_103434.png",
-        "scadenza": "2027.06.24",
+        "scadenza": "2027-06-24T00:00:00",
         "testo": "Curabitur maximus justo sit amet dui vulputate fringilla. In scelerisque urna eu commodo sagittis. Praesent tempus magna ut urna rutrum auctor. Aliquam sit amet metus at justo varius fringilla dignissim id orci. Praesent viverra nunc et gravida ornare. Integer consectetur libero eget libero dignissim consequat. Integer pulvinar leo est, eget dapibus velit tincidunt et. Vivamus accumsan ut diam eget porttitor. Quisque congue ultricies tortor, a imperdiet magna sollicitudin vitae. Maecenas finibus risus ligula, nec laoreet neque mollis ut. Aenean efficitur metus eu lectus ultricies venenatis.\n\n",
         "tipo": "avanzato",
         "titolo": "dapibus non luctus"
     },
     {
-        "dataAssegnazione": "2026.05.02",
         "etichetta": "House Chores",
         "nomeAssegnatore": "io",
         "testo": "Sed laoreet lacus sit amet enim ullamcorper, eget bibendum nisi faucibus. Maecenas ac ex vel ante euismod mattis. Quisque molestie felis eleifend velit consequat gravida. Mauris eu purus tortor. Curabitur nec luctus ex. Morbi imperdiet massa a tellus dictum pulvinar. Pellentesque eros lorem, accumsan quis sagittis non, condimentum at augue. Mauris vitae nibh non nulla sollicitudin elementum. Nullam vitae velit non nulla tincidunt posuere non at ipsum. Suspendisse sit amet odio eget quam lobortis faucibus sit amet pretium sapien. Donec eros ex, pulvinar non odio a, scelerisque dapibus nibh. Vivamus finibus vel leo id venenatis.\n\n",
@@ -73,12 +86,19 @@
         "titolo": "ante euismod mattis"
     },
     {
-        "dataAssegnazione": "2026.05.02",
         "etichetta": "Shopping List",
         "nomeAssegnatore": "io",
         "percorsoMedia": "media/shadedGeay.jpg",
         "testo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse viverra bibendum dui, in lobortis erat tristique quis. Ut aliquet neque sed dui condimentum vulputate.\nVestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam justo neque, mattis ut purus et, euismod egestas nisi. Ut lacus dui, dapibus non luctus id, euismod semper nisl. Nam elit libero, faucibus elementum dapibus in, dapibus vel quam. Maecenas sollicitudin eu ex ac interdum. Nulla imperdiet a nunc ac aliquet. \n\nDonec diam diam, laoreet ac pharetra vel, elementum id tellus. Donec eget nunc ut justo iaculis vestibulum. Ut posuere magna vitae eros varius, sit amet porta urna mattis. Sed id feugiat sem. Sed dignissim purus sit amet ante eleifend egestas. Donec feugiat consequat neque, id venenatis mi maximus vitae. Nunc et lacus vitae lacus iaculis scelerisque non vitae nisi.\n\n",
         "tipo": "multimediale",
         "titolo": "Thing to buy"
+    },
+    {
+        "etichetta": "Shopping List",
+        "nomeAssegnatore": "io",
+        "percorsoMedia": "media/194f03982bc921654c3947a075426315.jpg",
+        "testo": "Phasellus in blandit risus, nec dignissim ipsum. In pellentesque mattis urna, a rutrum quam sodales a. Etiam neque mi, lobortis consectetur neque at, cursus suscipit massa. Vestibulum non consequat augue, eget posuere velit. Nam maximus tincidunt erat, et pellentesque nunc facilisis vestibulum. Nunc nec enim sagittis, consequat erat ac, aliquam leo. Etiam ac orci in ex tincidunt tincidunt. Ut ac lacinia elit, quis tempus massa. Fusce feugiat facilisis odio sed luctus. Morbi velit purus, facilisis laoreet nunc non, rutrum efficitur neque. Phasellus eu enim mi.\n\n",
+        "tipo": "multimediale",
+        "titolo": "Remember to buy milk form Lidl"
     }
 ]
