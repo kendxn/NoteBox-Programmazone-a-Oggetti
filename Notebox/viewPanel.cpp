@@ -19,9 +19,14 @@ void viewPanel::caricaDati(nota *data) {
     ui->labelTesto_5->setText(data->testo);
 
     if (promemoria* p = dynamic_cast<promemoria*>(data)) {
-        ui->labelScadenza_5->show();
-        ui->labelScadenza_5->setText("Scadenza: " + p->getScadenza().toString("dd/MM/yyyy"));
+        ui->frameScadenza->show();
+        QDateTime dt = p->getScadenza();
 
+        if (dt.isValid() && !dt.isNull()) {
+            ui->labelScadenza_5->setText(dt.toString("dd/MM/yyyy HH:mm"));
+        } else {
+            ui->labelScadenza_5->setText("Nessuna scadenza impostata");
+        }
     } else {
         ui->frameScadenza->hide();
     }

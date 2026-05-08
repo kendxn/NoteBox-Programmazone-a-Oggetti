@@ -331,6 +331,9 @@ border: none;
                 <property name="text">
                  <string>Le tue etichette</string>
                 </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
                </widget>
               </item>
               <item>
