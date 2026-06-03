@@ -17,7 +17,7 @@ CXX           = g++
 DEFINES       = -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -Wextra -D_REENTRANT $(DEFINES)
 CXXFLAGS      = -pipe -g -std=gnu++1z -Wall -Wextra -D_REENTRANT $(DEFINES)
-INCPATH       = -I../../../textBox -I. -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtCore -I. -I. -I/usr/lib64/qt6/mkspecs/linux-g++
+INCPATH       = -I../../../Notebox -I. -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtCore -I. -I. -I/usr/lib64/qt6/mkspecs/linux-g++
 QMAKE         = /usr/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -37,7 +37,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = textBox1.0.0
-DISTDIR = /home/ken/Documents/Unipd/progetto_pao/textBox/build/Desktop-Debug/.tmp/textBox1.0.0
+DISTDIR = /home/ken/Git-stack/NoteBox-Programmazone-a-Oggetti/Notebox/build/Desktop-Debug/.tmp/textBox1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-rpath-link,/usr/lib64
 LIBS          = $(SUBLIBS) /usr/lib64/libQt6Widgets.so /usr/lib64/libQt6Gui.so /usr/lib64/libQt6Core.so -lpthread -lGLX -lOpenGL   
@@ -401,7 +401,6 @@ DIST          = /usr/lib64/qt6/mkspecs/features/spec_pre.prf \
 		/usr/lib64/qt6/mkspecs/features/qt_config.prf \
 		/usr/lib64/qt6/mkspecs/linux-g++/qmake.conf \
 		/usr/lib64/qt6/mkspecs/features/spec_post.prf \
-		../../.qmake.stash \
 		/usr/lib64/qt6/mkspecs/features/exclusive_builds.prf \
 		/usr/lib64/qt6/mkspecs/features/toolchain.prf \
 		/usr/lib64/qt6/mkspecs/features/default_pre.prf \
@@ -771,7 +770,6 @@ Makefile: ../../textBox.pro /usr/lib64/qt6/mkspecs/linux-g++/qmake.conf /usr/lib
 		/usr/lib64/qt6/mkspecs/features/qt_config.prf \
 		/usr/lib64/qt6/mkspecs/linux-g++/qmake.conf \
 		/usr/lib64/qt6/mkspecs/features/spec_post.prf \
-		.qmake.stash \
 		/usr/lib64/qt6/mkspecs/features/exclusive_builds.prf \
 		/usr/lib64/qt6/mkspecs/features/toolchain.prf \
 		/usr/lib64/qt6/mkspecs/features/default_pre.prf \
@@ -1117,7 +1115,6 @@ Makefile: ../../textBox.pro /usr/lib64/qt6/mkspecs/linux-g++/qmake.conf /usr/lib
 /usr/lib64/qt6/mkspecs/features/qt_config.prf:
 /usr/lib64/qt6/mkspecs/linux-g++/qmake.conf:
 /usr/lib64/qt6/mkspecs/features/spec_post.prf:
-.qmake.stash:
 /usr/lib64/qt6/mkspecs/features/exclusive_builds.prf:
 /usr/lib64/qt6/mkspecs/features/toolchain.prf:
 /usr/lib64/qt6/mkspecs/features/default_pre.prf:
@@ -1207,13 +1204,13 @@ moc_cardWidget.cpp: ../../cardWidget.h \
 		../../nota.h \
 		moc_predefs.h \
 		/usr/lib64/qt6/libexec/moc
-	/usr/lib64/qt6/libexec/moc $(DEFINES) --include /home/ken/Documents/Unipd/progetto_pao/textBox/build/Desktop-Debug/moc_predefs.h -I/usr/lib64/qt6/mkspecs/linux-g++ -I/home/ken/Documents/Unipd/progetto_pao/textBox -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtCore -I. -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../cardWidget.h -o moc_cardWidget.cpp
+	/usr/lib64/qt6/libexec/moc $(DEFINES) --include /home/ken/Git-stack/NoteBox-Programmazone-a-Oggetti/Notebox/build/Desktop-Debug/moc_predefs.h -I/usr/lib64/qt6/mkspecs/linux-g++ -I/home/ken/Git-stack/NoteBox-Programmazone-a-Oggetti/Notebox -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtCore -I. -I/usr/include/c++/15 -I/usr/include/c++/15/x86_64-redhat-linux -I/usr/include/c++/15/backward -I/usr/lib/gcc/x86_64-redhat-linux/15/include -I/usr/local/include -I/usr/include ../../cardWidget.h -o moc_cardWidget.cpp
 
 moc_editCard.cpp: ../../editCard.h \
 		../../nota.h \
 		moc_predefs.h \
 		/usr/lib64/qt6/libexec/moc
-	/usr/lib64/qt6/libexec/moc $(DEFINES) --include /home/ken/Documents/Unipd/progetto_pao/textBox/build/Desktop-Debug/moc_predefs.h -I/usr/lib64/qt6/mkspecs/linux-g++ -I/home/ken/Documents/Unipd/progetto_pao/textBox -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtCore -I. -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../editCard.h -o moc_editCard.cpp
+	/usr/lib64/qt6/libexec/moc $(DEFINES) --include /home/ken/Git-stack/NoteBox-Programmazone-a-Oggetti/Notebox/build/Desktop-Debug/moc_predefs.h -I/usr/lib64/qt6/mkspecs/linux-g++ -I/home/ken/Git-stack/NoteBox-Programmazone-a-Oggetti/Notebox -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtCore -I. -I/usr/include/c++/15 -I/usr/include/c++/15/x86_64-redhat-linux -I/usr/include/c++/15/backward -I/usr/lib/gcc/x86_64-redhat-linux/15/include -I/usr/local/include -I/usr/include ../../editCard.h -o moc_editCard.cpp
 
 moc_mainwindow.cpp: ../../mainwindow.h \
 		../../nota.h \
@@ -1221,22 +1218,24 @@ moc_mainwindow.cpp: ../../mainwindow.h \
 		../../promemoria.h \
 		moc_predefs.h \
 		/usr/lib64/qt6/libexec/moc
-	/usr/lib64/qt6/libexec/moc $(DEFINES) --include /home/ken/Documents/Unipd/progetto_pao/textBox/build/Desktop-Debug/moc_predefs.h -I/usr/lib64/qt6/mkspecs/linux-g++ -I/home/ken/Documents/Unipd/progetto_pao/textBox -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtCore -I. -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../mainwindow.h -o moc_mainwindow.cpp
+	/usr/lib64/qt6/libexec/moc $(DEFINES) --include /home/ken/Git-stack/NoteBox-Programmazone-a-Oggetti/Notebox/build/Desktop-Debug/moc_predefs.h -I/usr/lib64/qt6/mkspecs/linux-g++ -I/home/ken/Git-stack/NoteBox-Programmazone-a-Oggetti/Notebox -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtCore -I. -I/usr/include/c++/15 -I/usr/include/c++/15/x86_64-redhat-linux -I/usr/include/c++/15/backward -I/usr/lib/gcc/x86_64-redhat-linux/15/include -I/usr/local/include -I/usr/include ../../mainwindow.h -o moc_mainwindow.cpp
 
 moc_searchWindow.cpp: ../../searchWindow.h \
 		../../nota.h \
 		moc_predefs.h \
 		/usr/lib64/qt6/libexec/moc
-	/usr/lib64/qt6/libexec/moc $(DEFINES) --include /home/ken/Documents/Unipd/progetto_pao/textBox/build/Desktop-Debug/moc_predefs.h -I/usr/lib64/qt6/mkspecs/linux-g++ -I/home/ken/Documents/Unipd/progetto_pao/textBox -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtCore -I. -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../searchWindow.h -o moc_searchWindow.cpp
+	/usr/lib64/qt6/libexec/moc $(DEFINES) --include /home/ken/Git-stack/NoteBox-Programmazone-a-Oggetti/Notebox/build/Desktop-Debug/moc_predefs.h -I/usr/lib64/qt6/mkspecs/linux-g++ -I/home/ken/Git-stack/NoteBox-Programmazone-a-Oggetti/Notebox -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtCore -I. -I/usr/include/c++/15 -I/usr/include/c++/15/x86_64-redhat-linux -I/usr/include/c++/15/backward -I/usr/lib/gcc/x86_64-redhat-linux/15/include -I/usr/local/include -I/usr/include ../../searchWindow.h -o moc_searchWindow.cpp
 
 moc_viewPanel.cpp: ../../viewPanel.h \
 		../../nota.h \
 		../../notaTask.h \
 		../../promemoria.h \
 		../../notaMultimediale.h \
+		../../mainwindow.h \
+		../../cardWidget.h \
 		moc_predefs.h \
 		/usr/lib64/qt6/libexec/moc
-	/usr/lib64/qt6/libexec/moc $(DEFINES) --include /home/ken/Documents/Unipd/progetto_pao/textBox/build/Desktop-Debug/moc_predefs.h -I/usr/lib64/qt6/mkspecs/linux-g++ -I/home/ken/Documents/Unipd/progetto_pao/textBox -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtCore -I. -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../viewPanel.h -o moc_viewPanel.cpp
+	/usr/lib64/qt6/libexec/moc $(DEFINES) --include /home/ken/Git-stack/NoteBox-Programmazone-a-Oggetti/Notebox/build/Desktop-Debug/moc_predefs.h -I/usr/lib64/qt6/mkspecs/linux-g++ -I/home/ken/Git-stack/NoteBox-Programmazone-a-Oggetti/Notebox -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtCore -I. -I/usr/include/c++/15 -I/usr/include/c++/15/x86_64-redhat-linux -I/usr/include/c++/15/backward -I/usr/lib/gcc/x86_64-redhat-linux/15/include -I/usr/local/include -I/usr/include ../../viewPanel.h -o moc_viewPanel.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -1280,7 +1279,8 @@ cardWidget.o: ../../cardWidget.cpp ../../nota.h \
 		../../cardWidget.h \
 		../../promemoria.h \
 		../../notaMultimediale.h \
-		../../notaTask.h
+		../../notaTask.h \
+		../../mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o cardWidget.o ../../cardWidget.cpp
 
 editCard.o: ../../editCard.cpp ../../editCard.h \
@@ -1341,6 +1341,8 @@ viewPanel.o: ../../viewPanel.cpp ../../viewPanel.h \
 		../../notaTask.h \
 		../../promemoria.h \
 		../../notaMultimediale.h \
+		../../mainwindow.h \
+		../../cardWidget.h \
 		ui_viewPanel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o viewPanel.o ../../viewPanel.cpp
 

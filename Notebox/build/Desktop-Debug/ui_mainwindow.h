@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 6.10.1
+** Created by: Qt User Interface Compiler version 6.10.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -366,6 +366,7 @@ public:
 
         label_8 = new QLabel(frameSideBar);
         label_8->setObjectName("label_8");
+        label_8->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         verticalLayout_2->addWidget(label_8);
 
@@ -377,7 +378,7 @@ public:
         frameLabel->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName("scrollAreaWidgetContents_2");
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 300, 441));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 300, 443));
         verticalLayout_8 = new QVBoxLayout(scrollAreaWidgetContents_2);
         verticalLayout_8->setObjectName("verticalLayout_8");
         verticalSpacer_2 = new QSpacerItem(20, 404, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
@@ -406,7 +407,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1154, 793));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1154, 795));
         verticalLayout_5 = new QVBoxLayout(scrollAreaWidgetContents);
         verticalLayout_5->setObjectName("verticalLayout_5");
         frameInputWrapper = new QFrame(scrollAreaWidgetContents);
@@ -822,7 +823,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

@@ -15,6 +15,10 @@
 #include <QInputDialog>
 #include <QShortcut>
 #include <QKeySequence>
+#include <QFileInfo>
+#include <QDateTime>
+#include <QStandardPaths>
+#include <QDir>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -33,6 +37,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     void addCard(nota *data);
     void on_actionCarica_triggered();
+    static QString getBasePath();
+
     ~MainWindow();
 
 protected:

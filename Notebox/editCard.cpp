@@ -1,11 +1,8 @@
 #include "editCard.h"
 #include "ui_editCard.h"
 #include <QFileDialog>
-#include <QMessageBox>
 #include "notaMultimediale.h"
 #include "notaAvanzato.h"
-
-// Includi le sottoclassi per il dynamic_cast
 #include "promemoria.h"
 
 editCard::editCard(QWidget *parent) :
@@ -53,7 +50,6 @@ void editCard::caricaDati(nota *data) {
 
 }
 
-// --- gestione dei bottoni ---
 void editCard::on_buttonSalva_clicked() {
 
     if (!notaInModifica) return;
@@ -87,7 +83,6 @@ void editCard::on_buttonSalva_clicked() {
 
 
 void editCard::on_buttonImmagine_clicked() {
-    // finestra selezione
     QString filePath = QFileDialog::getOpenFileName(
         this,
         tr("Seleziona Immagine"),

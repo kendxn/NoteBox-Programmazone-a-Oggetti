@@ -4,6 +4,7 @@
 #include "promemoria.h"
 #include "notaMultimediale.h"
 #include "notaTask.h"
+#include "mainwindow.h"
 
 cardWidget::cardWidget(QWidget *parent)
     : QWidget(parent)
@@ -66,21 +67,21 @@ void cardWidget::setData(nota *info) {
         }
     }
 
-    // gestione immagini
     if (config.mostraImmagine) {
         if (notaMultimediale* nm = dynamic_cast<notaMultimediale*>(info)) {
-            QPixmap pix(nm->percorsoMedia);
+
+            QString percorsoAssoluto = MainWindow::getBasePath() + "/" + nm->percorsoMedia;
+
+            QPixmap pix(percorsoAssoluto);
 
             if (pix.isNull()) {
-                ui->labelImmagine->setText("Errore nel caricamento immagine");
+                ui->labelImmagine->setText("Errore caricamento:\n" + percorsoAssoluto);
             } else {
-                ui->labelImmagine->setText(nm->percorsoMedia);
-                ui->labelImmagine->setPixmap(pix.scaled(
-                    ui->labelImmagine->width(),
-                    ui->labelImmagine->height(),
-                    Qt::KeepAspectRatio,
-                    Qt::SmoothTransformation
-                    ));
+                int w = ui->labelImmagine->width();
+                if (w <= 10) {
+                    w = 250;
+                }
+                ui->labelImmagine->setPixmap(pix.scaledToWidth(w, Qt::SmoothTransformation));
             }
         }
     }

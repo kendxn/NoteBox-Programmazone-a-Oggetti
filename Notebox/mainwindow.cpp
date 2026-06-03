@@ -7,6 +7,7 @@
 #include "promemoria.h"
 #include "searchWindow.h"
 
+
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow) {
 
     ui->setupUi(this);
@@ -14,8 +15,12 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     ui->stackedWidget->setCurrentIndex(1);
     ui->menubar->hide();
     ui->toolBar->hide();
+    QDir baseDir(getBasePath());
 
-    // Connessione bottoni Overlay
+    if (!baseDir.exists()) {
+        baseDir.mkpath(".");
+    }
+    baseDir.mkpath("media");
     connect(ui->buttonInizia, &QPushButton::clicked, this, &MainWindow::iniziaProgramma);
     connect(ui->buttonImporta, &QPushButton::clicked, this, [this](){
         on_actionCarica_triggered();
@@ -230,8 +235,6 @@ void MainWindow::mostraDettaglioNota(nota* n) {
     overlay->raise(); // forza primo piano
 }
 
-
-
 // reazione a ridimensionamenti di finestra
 void MainWindow::resizeEvent(QResizeEvent *event) {
     QMainWindow::resizeEvent(event);
@@ -265,147 +268,30 @@ void MainWindow::rimuoviCard(cardWidget* widget) {
 
 }
 
-// azione bottone immagine
+QString MainWindow::getBasePath() {
+    QFileInfo info(__FILE__);
+    return info.absolutePath();
+}
+
 void MainWindow::on_buttonImmagine_clicked()
 {
-    ui->frameInput2->show();
-    ui->frameTitolo->show();
-    ui->boxTesto->setMinimumHeight(40);
-    ui->boxTesto->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    QString originalPath = QFileDialog::getOpenFileName(this, "Seleziona Immagine", "", "Images (*.png *.jpg *.jpeg)");
+    if(originalPath.isEmpty()) return;
 
-    // finestra selezione
-    QString filePath = QFileDialog::getOpenFileName(
-        this,
-        tr("Seleziona Immagine"),
-        QDir::homePath(),
-        tr("Immagini (*.png *.jpg *.jpeg *.bmp);;Tutti i file (*.*)")
-        );
+    QFileInfo fileInfo(originalPath);
+    QString fileName = fileInfo.fileName();
 
-    if (!filePath.isEmpty()) {
-        QFileInfo info(filePath);
-        QString fileName = info.fileName();
+    QString destPath = getBasePath() + "/media/" + fileName;
 
-        QDir dir;
-        if (!dir.exists("media")) {
-            dir.mkdir("media");
-        }
+    if (QFile::copy(originalPath, destPath)) {
 
-        QString destinazione = "media/" + fileName;
-
-
-        if (!QFile::exists(destinazione)) {
-            QFile::copy(filePath, destinazione);
-        }
-
-        ui->labelImmagine->setText(destinazione);
+        QString percorsoRelativo = "media/" + fileName;
+        ui->labelImmagine->setText(percorsoRelativo);
         ui->labelImmagine->setWordWrap(true);
+    } else {
+        QMessageBox::warning(this, "Errore di copia",
+                             "Impossibile copiare il file.\nAssicurati che la cartella 'media' esista e che non ci sia già un file con questo nome.");
     }
-}
-
-// azione chiudi inserimento immagine
-void MainWindow::on_buttonClose_clicked()
-{
-    ui->frameInput2->hide();
-    ui->frameTitolo->hide();
-    ui->boxTesto->setMinimumHeight(40);
-    ui->boxTesto->setMaximumHeight(40);
-    ui->boxTesto->clear();
-    ui->boxTesto->clearFocus();
-    ui->labelImmagine->setText("Inserire immagine");
-    ui->frameScadenza->hide();
-    ui->frameButtonScandenza->show();
-    ui->checkTask->setChecked(false);
-    ui->lineTitolo->clear();
-    ui->frameImmagine->show();
-    ui->frameTask->show();
-}
-
-
-// azione bottone salva
-void MainWindow::on_buttonSalva_clicked()
-{
-    // recupero dati
-    QString titolo = ui->lineTitolo->text();
-    QString testo = ui->boxTesto->toPlainText();
-    QString path = ui->labelImmagine->text();
-
-    // controllo sicurezza
-    if (titolo.isEmpty() && testo.isEmpty()) {
-        QMessageBox::warning(this, "Nota Vuota", "Non puoi salvare una nota senza titolo o testo!");
-        return;
-    }
-
-    // Logica creazione nota polimorfica
-
-    nota* nuovanota = nullptr;
-
-    // le condizioni dai widget
-    bool vuoleTask = ui->checkTask->isChecked();
-    bool haScadenza = ui->frameScadenza->isVisible();
-    bool haImmagine = (path != "Inserire immagine" && !path.isEmpty());
-
-    int counter = (vuoleTask ? 1 : 0) + (haScadenza ? 1 : 0) + (haImmagine ? 1 : 0);
-
-    // se ha >=2  allora diventa una nota avanzata in automatica
-    if (counter > 1) {
-        notaAvanzato* na = new notaAvanzato();
-        na->completata = vuoleTask ? false : false;
-        na->percorsoMedia = haImmagine ? path : "";
-
-        // richiede scadenza?
-        if (haScadenza) {
-            na->setScadenza(ui->dateEdit->dateTime());
-        } else {
-
-            na->setScadenza(QDateTime());
-        }
-        nuovanota = na;
-    }
-    // gestione singoli casi: task, promemoria e immagine altrimenti nota generica
-    else if (vuoleTask) {
-        notaTask* t = new notaTask();
-        t->completata = false;
-        nuovanota = t;
-    }
-    else if (haScadenza) {
-        promemoria* p = new promemoria();
-        p->setScadenza(ui->dateEdit->dateTime());
-        nuovanota = p;
-    }
-    else if (haImmagine) {
-        notaMultimediale* nm = new notaMultimediale();
-        nm->percorsoMedia = path;
-        nuovanota = nm;
-    }
-    else {
-        nuovanota = new nota();
-    }
-
-    // assegnazione campi comuni
-    nuovanota->id = QDateTime::currentMSecsSinceEpoch();
-    nuovanota->titolo = titolo.isEmpty() ? "<senza titolo>" : titolo;
-    nuovanota->testo = testo;
-    nuovanota->etichetta = ui->comboBox->currentText();
-    nuovanota->nomeAssegnatore = ui->lineAssegnatore->text().isEmpty() ? "io" : ui->lineAssegnatore->text();
-    nuovanota->dataAssegnazione = QDate::currentDate();
-
-    // aggiungo nuova nota
-    this->addCard(nuovanota);
-
-    // reset grafico
-    ui->lineTitolo->clear();
-    ui->boxTesto->clear();
-    ui->labelImmagine->setText("Inserire immagine");
-    ui->labelImmagine->setPixmap(QPixmap()); // Pulisce l'anteprima se presente
-    ui->checkTask->setChecked(false);
-    ui->dateEdit->setDateTime(QDateTime::currentDateTime()); // Torna a oggi
-
-    // Reset Grafico
-    ui->frameInput2->hide();
-    ui->frameTitolo->hide();
-    ui->frameScadenza->hide();
-    ui->frameButtonScandenza->show();
-    on_buttonClose_clicked();
 }
 
 // gestione azione modifica
@@ -524,18 +410,19 @@ void MainWindow::filtraPerEtichetta(const QString &tag) {
 // --- Saltavataggio e Importazione di dati in formato Json ---
 
 
-void MainWindow::salvaDati() {
-    QString path = QFileDialog::getSaveFileName(this, "Salva Note", "", "JSON Files (*.json)");
-    if (path.isEmpty()) return;
+void MainWindow::salvaDati()
+{
+    QString filePath = getBasePath() + "/salvataggi/dati.json";
+    QFile file(filePath);
 
-    QJsonArray arrayNote;
-    for (nota* n : listaNote) {
-        arrayNote.append(n->toJson());
-    }
-
-    QJsonDocument doc(arrayNote);
-    QFile file(path);
     if (file.open(QIODevice::WriteOnly)) {
+        QJsonArray jsonArray;
+        // Cicla la tua listaNote e converti in json...
+        for(nota* n : listaNote) {
+            jsonArray.append(n->toJson());
+        }
+
+        QJsonDocument doc(jsonArray);
         file.write(doc.toJson());
         file.close();
     }
@@ -723,4 +610,92 @@ void MainWindow::on_actionEsci_triggered() {
     if (risposta == QMessageBox::Yes) {
         QApplication::quit();
     }
+}
+
+void MainWindow::on_buttonClose_clicked()
+{
+    ui->frameInput2->hide();
+    ui->frameTitolo->hide();
+    ui->boxTesto->setMinimumHeight(40);
+    ui->boxTesto->setMaximumHeight(40);
+    ui->boxTesto->clear();
+    ui->boxTesto->clearFocus();
+    ui->labelImmagine->setText("Inserire immagine");
+    ui->frameScadenza->hide();
+    ui->frameButtonScandenza->show();
+    ui->checkTask->setChecked(false);
+    ui->lineTitolo->clear();
+    ui->frameImmagine->show();
+    ui->frameTask->show();
+}
+
+void MainWindow::on_buttonSalva_clicked()
+{
+    // recupero dati
+    QString titolo = ui->lineTitolo->text();
+    QString testo = ui->boxTesto->toPlainText();
+    QString path = ui->labelImmagine->text();
+
+    // controllo sicurezza
+    if (titolo.isEmpty() && testo.isEmpty()) {
+        QMessageBox::warning(this, "Nota Vuota", "Non puoi salvare una nota senza titolo o testo!");
+        return;
+    }
+
+    // Logica creazione nota polimorfica
+
+    nota* nuovanota = nullptr;
+
+    // le condizioni dai widget
+    bool vuoleTask = ui->checkTask->isChecked();
+    bool haScadenza = ui->frameScadenza->isVisible();
+    bool haImmagine = (path != "Inserire immagine" && !path.isEmpty());
+
+    int counter = (vuoleTask ? 1 : 0) + (haScadenza ? 1 : 0) + (haImmagine ? 1 : 0);
+
+    // se ha >=2  allora diventa una nota avanzata in automatica
+    if (counter > 1) {
+        notaAvanzato* na = new notaAvanzato();
+        na->completata = vuoleTask ? false : false;
+        na->percorsoMedia = haImmagine ? path : "";
+
+        // richiede scadenza?
+        if (haScadenza) {
+            na->setScadenza(ui->dateEdit->dateTime());
+        } else {
+            na->setScadenza(QDateTime());
+        }
+        nuovanota = na;
+    }
+    // gestione singoli casi: task, promemoria e immagine altrimenti nota generica
+    else if (vuoleTask) {
+        notaTask* t = new notaTask();
+        t->completata = false;
+        nuovanota = t;
+    }
+    else if (haScadenza) {
+        promemoria* p = new promemoria();
+        p->setScadenza(ui->dateEdit->dateTime());
+        nuovanota = p;
+    }
+    else if (haImmagine) {
+        notaMultimediale* nm = new notaMultimediale();
+        nm->percorsoMedia = path;
+        nuovanota = nm;
+    }
+    else {
+        nuovanota = new nota();
+    }
+
+    // assegnazione campi comuni
+    nuovanota->id = QDateTime::currentMSecsSinceEpoch();
+    nuovanota->titolo = titolo.isEmpty() ? "<senza titolo>" : titolo;
+    nuovanota->testo = testo;
+    nuovanota->etichetta = ui->comboBox->currentText();
+    nuovanota->nomeAssegnatore = ui->lineAssegnatore->text().isEmpty() ? "io" : ui->lineAssegnatore->text();
+    nuovanota->dataAssegnazione = QDate::currentDate();
+
+    // aggiungo nuova nota
+    this->addCard(nuovanota);
+    on_buttonClose_clicked();
 }

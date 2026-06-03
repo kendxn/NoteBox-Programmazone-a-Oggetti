@@ -31,6 +31,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QFrame *frame;
     QVBoxLayout *verticalLayout_2;
+    QSpacerItem *verticalSpacer_2;
     QFrame *frameInputWrapper;
     QHBoxLayout *horizontalLayout_2;
     QSpacerItem *horizontalSpacer;
@@ -91,6 +92,10 @@ public:
         frame->setFrameShadow(QFrame::Shadow::Raised);
         verticalLayout_2 = new QVBoxLayout(frame);
         verticalLayout_2->setObjectName("verticalLayout_2");
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        verticalLayout_2->addItem(verticalSpacer_2);
+
         frameInputWrapper = new QFrame(frame);
         frameInputWrapper->setObjectName("frameInputWrapper");
         frameInputWrapper->setStyleSheet(QString::fromUtf8("#frameInputWrapper {\n"

@@ -33,12 +33,18 @@ void viewPanel::caricaDati(nota *data) {
 
     if (notaMultimediale* nm = dynamic_cast<notaMultimediale*>(data)) {
         if (!nm->percorsoMedia.isEmpty()) {
-            QPixmap pix(nm->percorsoMedia);
+
+            QString percorsoAssoluto = MainWindow::getBasePath() + "/" + nm->percorsoMedia;
+
+            QPixmap pix(percorsoAssoluto);
             if (!pix.isNull()) {
+                ui->frameImmagine->show();
                 ui->labelImmagine->show();
                 ui->labelImmagine->setPixmap(pix.scaled(600, 400, Qt::KeepAspectRatio, Qt::SmoothTransformation));
             } else {
-                ui->frameImmagine->hide();
+                ui->frameImmagine->show();
+                ui->labelImmagine->show();
+                ui->labelImmagine->setText("Impossibile trovare l'immagine in:\n" + percorsoAssoluto);
             }
         } else {
             ui->frameImmagine->hide();

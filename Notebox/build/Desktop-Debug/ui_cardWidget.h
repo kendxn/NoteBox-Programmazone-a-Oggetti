@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'cardWidget.ui'
 **
-** Created by: Qt User Interface Compiler version 6.10.1
+** Created by: Qt User Interface Compiler version 6.10.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -15,7 +15,6 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -36,13 +35,12 @@ public:
     QSpacerItem *horizontalSpacer;
     QLabel *label_3;
     QLabel *labelData;
-    QScrollArea *scrollArea;
-    QWidget *scrollAreaWidgetContents;
-    QVBoxLayout *verticalLayout_2;
     QFrame *frame_3;
+    QVBoxLayout *verticalLayout_2;
+    QFrame *frame_5;
     QHBoxLayout *horizontalLayout_6;
     QLabel *labelImmagine;
-    QFrame *frame_5;
+    QFrame *frame_6;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label;
     QLabel *labelNome;
@@ -85,7 +83,7 @@ public:
         verticalLayout_4->setContentsMargins(0, 0, 0, -1);
         frame_2 = new QFrame(frame);
         frame_2->setObjectName("frame_2");
-        frame_2->setMinimumSize(QSize(0, 100));
+        frame_2->setMinimumSize(QSize(0, 500));
         frame_2->setStyleSheet(QString::fromUtf8("background-color: #1a2a3a;"));
         frame_2->setFrameShape(QFrame::Shape::StyledPanel);
         frame_2->setFrameShadow(QFrame::Shadow::Raised);
@@ -94,6 +92,7 @@ public:
         frame_4 = new QFrame(frame_2);
         frame_4->setObjectName("frame_4");
         frame_4->setMinimumSize(QSize(0, 50));
+        frame_4->setMaximumSize(QSize(16777215, 50));
         frame_4->setFrameShape(QFrame::Shape::StyledPanel);
         frame_4->setFrameShadow(QFrame::Shadow::Raised);
         horizontalLayout_2 = new QHBoxLayout(frame_4);
@@ -122,43 +121,39 @@ public:
 
         verticalLayout->addWidget(frame_4);
 
-        scrollArea = new QScrollArea(frame_2);
-        scrollArea->setObjectName("scrollArea");
-        scrollArea->setStyleSheet(QString::fromUtf8("#scrollArea {\n"
-"border: none;\n"
-"}"));
-        scrollArea->setWidgetResizable(true);
-        scrollAreaWidgetContents = new QWidget();
-        scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 542, 419));
-        verticalLayout_2 = new QVBoxLayout(scrollAreaWidgetContents);
-        verticalLayout_2->setObjectName("verticalLayout_2");
-        frame_3 = new QFrame(scrollAreaWidgetContents);
+        frame_3 = new QFrame(frame_2);
         frame_3->setObjectName("frame_3");
+        frame_3->setMaximumSize(QSize(16777215, 300));
         frame_3->setFrameShape(QFrame::Shape::StyledPanel);
         frame_3->setFrameShadow(QFrame::Shadow::Raised);
-        horizontalLayout_6 = new QHBoxLayout(frame_3);
+        verticalLayout_2 = new QVBoxLayout(frame_3);
+        verticalLayout_2->setObjectName("verticalLayout_2");
+        frame_5 = new QFrame(frame_3);
+        frame_5->setObjectName("frame_5");
+        frame_5->setFrameShape(QFrame::Shape::StyledPanel);
+        frame_5->setFrameShadow(QFrame::Shadow::Raised);
+        horizontalLayout_6 = new QHBoxLayout(frame_5);
         horizontalLayout_6->setObjectName("horizontalLayout_6");
-        labelImmagine = new QLabel(frame_3);
+        labelImmagine = new QLabel(frame_5);
         labelImmagine->setObjectName("labelImmagine");
         labelImmagine->setMinimumSize(QSize(0, 100));
         labelImmagine->setScaledContents(true);
 
         horizontalLayout_6->addWidget(labelImmagine);
 
-        frame_5 = new QFrame(frame_3);
-        frame_5->setObjectName("frame_5");
-        frame_5->setMaximumSize(QSize(16777215, 50));
-        frame_5->setFrameShape(QFrame::Shape::StyledPanel);
-        frame_5->setFrameShadow(QFrame::Shadow::Raised);
-        horizontalLayout_3 = new QHBoxLayout(frame_5);
+        frame_6 = new QFrame(frame_5);
+        frame_6->setObjectName("frame_6");
+        frame_6->setMaximumSize(QSize(16777215, 50));
+        frame_6->setFrameShape(QFrame::Shape::StyledPanel);
+        frame_6->setFrameShadow(QFrame::Shadow::Raised);
+        horizontalLayout_3 = new QHBoxLayout(frame_6);
         horizontalLayout_3->setObjectName("horizontalLayout_3");
-        label = new QLabel(frame_5);
+        label = new QLabel(frame_6);
         label->setObjectName("label");
 
         horizontalLayout_3->addWidget(label);
 
-        labelNome = new QLabel(frame_5);
+        labelNome = new QLabel(frame_6);
         labelNome->setObjectName("labelNome");
         labelNome->setMinimumSize(QSize(100, 0));
 
@@ -168,18 +163,18 @@ public:
 
         horizontalLayout_3->addItem(horizontalSpacer_2);
 
-        labelStatus = new QLabel(frame_5);
+        labelStatus = new QLabel(frame_6);
         labelStatus->setObjectName("labelStatus");
 
         horizontalLayout_3->addWidget(labelStatus);
 
 
-        horizontalLayout_6->addWidget(frame_5);
+        horizontalLayout_6->addWidget(frame_6);
 
 
-        verticalLayout_2->addWidget(frame_3);
+        verticalLayout_2->addWidget(frame_5);
 
-        frameTesto = new QFrame(scrollAreaWidgetContents);
+        frameTesto = new QFrame(frame_3);
         frameTesto->setObjectName("frameTesto");
         frameTesto->setMinimumSize(QSize(0, 20));
         frameTesto->setStyleSheet(QString::fromUtf8("border: none;"));
@@ -196,13 +191,12 @@ public:
 
         verticalLayout_2->addWidget(frameTesto);
 
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+        verticalSpacer = new QSpacerItem(20, 228, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
         verticalLayout_2->addItem(verticalSpacer);
 
-        scrollArea->setWidget(scrollAreaWidgetContents);
 
-        verticalLayout->addWidget(scrollArea);
+        verticalLayout->addWidget(frame_3);
 
         frameScadenza = new QFrame(frame_2);
         frameScadenza->setObjectName("frameScadenza");

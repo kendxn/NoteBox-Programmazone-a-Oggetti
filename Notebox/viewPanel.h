@@ -6,6 +6,7 @@
 #include "notaTask.h"
 #include "promemoria.h"
 #include "notaMultimediale.h"
+#include "mainwindow.h"
 
 namespace Ui {
 class viewPanel;
