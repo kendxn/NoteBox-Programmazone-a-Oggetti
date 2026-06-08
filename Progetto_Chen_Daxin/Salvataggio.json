@@ -1,0 +1,110 @@
+{
+    "etichette": [
+        "Generico",
+        "Lavoro 💼",
+        "Shopping 🛒",
+        "Travel ✈️",
+        "University 🎓"
+    ],
+    "note": [
+        {
+            "completata": false,
+            "dataAssegnazione": "2026-06-03",
+            "etichetta": "Shopping 🛒",
+            "nomeAssegnatore": "Erika",
+            "percorsoMedia": "media/194f03982bc921654c3947a075426315.jpg",
+            "scadenza": "",
+            "testo": "fialraven",
+            "tipo": "avanzato",
+            "titolo": "<senza titolo>"
+        },
+        {
+            "etichetta": "Lavoro 💼",
+            "nomeAssegnatore": "Erika",
+            "scadenza": "2027-06-24T10:46:24Z",
+            "testo": "Proin tincidunt eget ante id tincidunt. Vivamus quam ex, imperdiet vel ligula quis, viverra consectetur neque. Phasellus non eleifend sapien. Suspendisse non lacus arcu. Cras eu lacus pulvinar, mollis tellus ac, egestas lectus. Phasellus viverra, nibh at mattis malesuada, nunc tortor sollicitudin dolor, sit amet pulvinar nunc urna vulputate sapien. Nulla leo tortor, lacinia sit amet iaculis at, ultrices vitae magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce in velit sit amet metus elementum tempus. Nullam fringilla nulla ac faucibus fringilla. In fermentum gravida ligula, id scelerisque sem pulvinar eget. Ut finibus pulvinar neque, blandit sodales magna malesuada eu. Suspendisse id euismod enim. Morbi at mauris non diam laoreet malesuada ac vel lacus. Etiam elementum, urna sed vehicula rhoncus, odio dui ultricies magna, sed lacinia nibh tellus quis nulla. Aliquam quis fermentum purus, eu pharetra enim.\n\n",
+            "tipo": "promemoria",
+            "titolo": "Rainbow 🌈"
+        },
+        {
+            "etichetta": "Lavoro 💼",
+            "nomeAssegnatore": "Erika",
+            "percorsoMedia": "media/2444c62ac438976711b0667a006c0057.jpg",
+            "testo": "Proin tincidunt eget ante id tincidunt. Vivamus quam ex, imperdiet vel ligula quis, viverra consectetur neque. Phasellus non eleifend sapien. Suspendisse non lacus arcu. Cras eu lacus pulvinar, mollis tellus ac, egestas lectus. Phasellus viverra, nibh at mattis malesuada, nunc tortor sollicitudin dolor, sit amet pulvinar nunc urna vulputate sapien. Nulla leo tortor, lacinia sit amet iaculis at, ultrices vitae magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce in velit sit amet metus elementum tempus. Nullam fringilla nulla ac faucibus fringilla. In fermentum gravida ligula, id scelerisque sem pulvinar eget. Ut finibus pulvinar neque, blandit sodales magna malesuada eu. Suspendisse id euismod enim. Morbi at mauris non diam laoreet malesuada ac vel lacus. Etiam elementum, urna sed vehicula rhoncus, odio dui ultricies magna, sed lacinia nibh tellus quis nulla. Aliquam quis fermentum purus, eu pharetra enim.\n\n",
+            "tipo": "multimediale",
+            "titolo": "Aliquam gravida neque arcu, a gravida nisi bibendum eu. Sed vitae torto"
+        },
+        {
+            "completata": false,
+            "dataAssegnazione": "2026-06-03",
+            "etichetta": "Shopping 🛒",
+            "nomeAssegnatore": "Erika",
+            "percorsoMedia": "media/pic.jpg",
+            "scadenza": "2030-01-18T00:00:00Z",
+            "testo": "Nulla quis urna vitae ligula ultrices efficitur id sed urna. Phasellus viverra felis at euismod ultrices. Nam ex sem, rhoncus non odio eget, semper commodo lacus. Proin commodo luctus nulla, ut porttitor felis porttitor vel. Duis accumsan tincidunt leo, a luctus massa luctus euismod. Praesent nibh massa, imperdiet id nisi lacinia, pulvinar fringilla ex. Donec aliquam non velit vitae ultrices.\n\n",
+            "tipo": "avanzato",
+            "titolo": "Nulla quis urna vitae ligula ultrices efficitur id sed urna. Phasellus viverra felis at euismod ultrices"
+        },
+        {
+            "etichetta": "Shopping 🛒",
+            "nomeAssegnatore": "Dan",
+            "percorsoMedia": "media/295f86c272df2c07b59241796a11d669.jpg",
+            "testo": "Aliquam ultrices porttitor tortor, id eleifend orci consequat in. Mauris a tincidunt arcu. Quisque at fermentum justo. Donec eu porta nisl. Curabitur vitae gravida mi. Pellentesque lacinia cursus consectetur. Pellentesque cursus nisl ut lorem blandit congue. Suspendisse sagittis odio at feugiat suscipit. Phasellus eu facilisis orci, nec semper dui. Proin pretium efficitur purus ultricies molestie. Integer rutrum, orci tincidunt semper ullamcorper, dui libero pharetra leo, nec pretium enim nisi eget ipsum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec non leo in ligula tristique blandit a sit amet nunc.\n\n",
+            "tipo": "multimediale",
+            "titolo": "Aliquam ultrices porttitor tortor, id eleifend"
+        },
+        {
+            "completata": false,
+            "dataAssegnazione": "2026-06-03",
+            "etichetta": "Travel ✈️",
+            "nomeAssegnatore": "Dan",
+            "percorsoMedia": "media/e86e5bd606b4b8f869e1a21769faa94a.jpg",
+            "scadenza": "2026-11-26T10:46:24Z",
+            "testo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra turpis nec dui gravida, ac sodales risus lobortis. Quisque viverra ante lacus, vitae sodales turpis viverra non. Donec vel semper diam, ac malesuada lectus. Pellentesque elit elit, aliquet in egestas gravida, ullamcorper ac elit. Sed consectetur ut nisi vel facilisis. Maecenas commodo eu sapien sed ultricies. Aenean tincidunt tincidunt sapien, et vulputate magna viverra at. Integer in ultricies nunc. Quisque sit amet suscipit libero. Vestibulum et tortor iaculis, fermentum nulla vitae, lacinia neque. Nunc maximus tempus mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut luctus lorem, id sodales eros. Nulla suscipit, lectus nec tristique porta, odio tortor venenatis erat, eget eleifend elit dui dignissim dolor.\n\n",
+            "tipo": "avanzato",
+            "titolo": "Nulla ut luctus lorem, id sodales eros. Nulla suscipit, lectus nec tristique porta, odio tortor venenatis erat, eget eleifend elit dui dignissim dolor."
+        },
+        {
+            "completata": false,
+            "dataAssegnazione": "2026-06-03",
+            "etichetta": "Travel ✈️",
+            "nomeAssegnatore": "io",
+            "percorsoMedia": "media/a62a34f590e25f8775afefd54f3e9269.jpg",
+            "scadenza": "2031-12-24T00:00:00Z",
+            "testo": "Maecenas facilisis elementum sem, vitae feugiat sem. Curabitur luctus, tortor at gravida fermentum, felis odio dapibus ipsum, et porttitor leo ex eget magna. Pellentesque nunc lectus, convallis vel dignissim nec, finibus vel massa. Nulla sed lacus ac tortor pretium pellentesque. Integer viverra lorem ut dui blandit sodales. Cras massa tortor, eleifend vitae ultricies sit amet, convallis ut nisl. In nec ultricies magna. Maecenas sodales consequat mi, a vehicula ex iaculis eu. Aliquam eu molestie mi, ac ullamcorper lorem. Morbi vestibulum leo at varius rhoncus. Nulla congue mauris vitae enim condimentum, sed condimentum justo viverra. Ut a nisi vel dui faucibus tincidunt eget id ipsum. Nunc fringilla justo eget mi sodales luctus. Etiam malesuada tortor ut orci accumsan semper. Maecenas posuere mi at nibh mollis, vitae ultricies eros rhoncus.\n\n",
+            "tipo": "avanzato",
+            "titolo": " Morbi vestibulum leo at varius rhoncus. Nulla congue mauris "
+        },
+        {
+            "completata": false,
+            "etichetta": "University 🎓",
+            "nomeAssegnatore": "io",
+            "testo": "Nulla lacinia dolor sem, id dictum libero condimentum et. Nam eget euismod lectus. Mauris porttitor gravida mauris a tincidunt. Quisque justo mauris, lobortis id arcu quis, rhoncus consequat purus. Etiam in suscipit purus. Nulla facilisi. Etiam eros purus, maximus eu augue mollis, condimentum malesuada nunc. Maecenas porta, nunc eget suscipit dignissim, libero metus hendrerit nibh, vel viverra sem eros id risus. Sed libero justo, placerat vel auctor sed, vestibulum a metus. Praesent congue quam ut nulla euismod, sed pharetra diam finibus. Ut pulvinar blandit est, eu interdum tellus efficitur a",
+            "tipo": "task",
+            "titolo": "Nota tipo task"
+        },
+        {
+            "etichetta": "University 🎓",
+            "nomeAssegnatore": "io",
+            "percorsoMedia": "media/826708f27855f3fe22e45f463f0aabb0.jpg",
+            "testo": "",
+            "tipo": "multimediale",
+            "titolo": "Nota mutlimendiale"
+        },
+        {
+            "etichetta": "Lavoro 💼",
+            "nomeAssegnatore": "io",
+            "scadenza": "2026-12-24T10:44:30Z",
+            "testo": "Nulla lacinia dolor sem, id dictum libero condimentum et. Nam eget euismod lectus. Mauris porttitor gravida mauris a tincidunt. Quisque justo mauris, lobortis id arcu quis, rhoncus consequat purus. Etiam in suscipit purus. Nulla facilisi. Etiam eros purus, maximus eu augue mollis, condimentum malesuada nunc. Maecenas porta, nunc eget suscipit dignissim, libero metus hendrerit nibh, vel viverra sem eros id risus. Sed libero justo, placerat vel auctor sed, vestibulum a metus. Praesent congue quam ut nulla euismod, sed pharetra diam finibus. Ut pulvinar blandit est, eu interdum tellus efficitur a. Sed convallis, purus ut accumsan congue, massa nibh commodo augue, ut vulputate orci ipsum feugiat sapien. Praesent rutrum elit id ex laoreet rhoncus.\n\n",
+            "tipo": "promemoria",
+            "titolo": "Nota con scadenza"
+        },
+        {
+            "etichetta": "Shopping 🛒",
+            "nomeAssegnatore": "io",
+            "testo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra turpis nec dui gravida, ac sodales risus lobortis. Quisque viverra ante lacus, vitae sodales turpis viverra non. Donec vel semper diam, ac malesuada lectus. Pellentesque elit elit, aliquet in egestas gravida, ullamcorper ac elit. Sed consectetur ut nisi vel facilisis. Maecenas commodo eu sapien sed ultricies. Aenean tincidunt tincidunt sapien, et vulputate magna viverra at. Integer in ultricies nunc. Quisque sit amet suscipit libero. Vestibulum et tortor iaculis, fermentum nulla vitae, lacinia neque. Nunc maximus tempus mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut luctus lorem, id sodales eros. Nulla suscipit, lectus nec tristique porta, odio tortor venenatis erat, eget eleifend elit dui dignissim dolor.\n\n",
+            "tipo": "base",
+            "titolo": "Nota semplice "
+        }
+    ]
+}
