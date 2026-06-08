@@ -1,0 +1,143 @@
+#include "editCard.h"
+#include "ui_editCard.h"
+#include <QFileDialog>
+#include "notaMultimediale.h"
+#include "notaAvanzato.h"
+#include "promemoria.h"
+
+editCard::editCard(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::editCard)
+{
+    ui->setupUi(this);
+
+    ui->frameScadenzaEdit->hide();
+    ui->frameScadenzaButton->show();
+
+}
+
+editCard::~editCard() {
+    delete ui;
+}
+void editCard::caricaDati(nota *data) {
+    if (!data) return;
+    this->notaInModifica = data;
+
+    ui->lineTitolo->setText(data->titolo);
+    ui->boxTesto->setPlainText(data->testo);
+    ui->lineAssegnatore->setText(data->nomeAssegnatore);
+
+    int index = ui->comboBox->findText(data->etichetta);
+    if (index != -1) {
+        ui->comboBox->setCurrentIndex(index);
+    }
+
+    ui->frameScadenzaEdit->hide();
+    ui->frameImmagine->hide();
+    ui->frameScadenzaButton->show(); // Mostra il bottone per aggiungere la scadenza se non c'è già
+
+    if (notaAvanzato* na = dynamic_cast<notaAvanzato*>(data)) {
+        // Gestione Immagine
+        ui->frameImmagine->show();
+        ui->labelImmagine->setText(na->percorsoMedia);
+
+        if (na->getScadenza().isValid() && na->getScadenza().date().year() != 2000) {
+            ui->dateEdit->setDateTime(na->getScadenza());
+            ui->frameScadenzaEdit->show();
+            ui->frameScadenzaButton->hide();
+        } else {
+            ui->dateEdit->setDateTime(QDateTime::currentDateTime());
+        }
+    }
+    else if (promemoria* p = dynamic_cast<promemoria*>(data)) {
+        if (p->getScadenza().isValid() && p->getScadenza().date().year() != 2000) {
+            ui->dateEdit->setDateTime(p->getScadenza());
+            ui->frameScadenzaEdit->show();
+            ui->frameScadenzaButton->hide();
+        } else {
+            ui->dateEdit->setDateTime(QDateTime::currentDateTime());
+        }
+    }
+    else if (notaMultimediale* nm = dynamic_cast<notaMultimediale*>(data)) {
+        ui->frameImmagine->show();
+        ui->labelImmagine->setText(nm->percorsoMedia);
+    }
+}
+void editCard::on_buttonSalva_clicked() {
+
+    if (!notaInModifica) return;
+
+    if (ui->lineTitolo->text().isEmpty() && ui->boxTesto->toPlainText().isEmpty()) {
+        QMessageBox::warning(this, "Nota Vuota", "Inserisci almeno un titolo o un testo!");
+        return;
+    }
+
+    notaInModifica->titolo = ui->lineTitolo->text();
+    notaInModifica->testo = ui->boxTesto->toPlainText();
+    notaInModifica->etichetta = ui->comboBox->currentText();
+    notaInModifica->nomeAssegnatore = ui->lineAssegnatore->text();
+
+
+    if (promemoria* p = dynamic_cast<promemoria*>(notaInModifica)) {
+        if (ui->frameScadenzaEdit->isVisible()) {
+            p->setScadenza(ui->dateEdit->dateTime());
+        }
+    }
+
+    if (notaMultimediale* nm = dynamic_cast<notaMultimediale*>(notaInModifica)) {
+        nm->percorsoMedia = ui->labelImmagine->text();
+    }
+
+    emit salvataggioCompletato();
+
+    this->close();
+    this->deleteLater();
+}
+
+
+void editCard::on_buttonImmagine_clicked() {
+    QString filePath = QFileDialog::getOpenFileName(
+        this,
+        tr("Seleziona Immagine"),
+        QDir::homePath(),
+        tr("Immagini (*.png *.jpg *.jpeg *.bmp);;Tutti i file (*.*)")
+        );
+
+    if (!filePath.isEmpty()) {
+        QFileInfo info(filePath);
+        QString fileName = info.fileName();
+
+        QDir dir;
+        if (!dir.exists("media")) {
+            dir.mkdir("media");
+        }
+
+        QString destinazione = "media/" + fileName;
+
+
+        if (!QFile::exists(destinazione)) {
+            QFile::copy(filePath, destinazione);
+        }
+
+        ui->labelImmagine->setText(destinazione);
+        ui->labelImmagine->setWordWrap(true);
+    }
+}
+
+void editCard::on_buttonSetScadenza_clicked()
+{
+    ui->frameScadenzaButton->hide();
+    ui->frameScadenzaEdit->show();
+}
+
+void editCard::setEtichetteDisponibili(const QStringList &lista) {
+    ui->comboBox->clear();
+    ui->comboBox->addItems(lista);
+}
+
+void editCard::on_buttonAnnulla_clicked()
+{
+    this->close();
+    this->deleteLater();
+}
+
